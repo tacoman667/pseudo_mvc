@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E7518C7B-478E-40A8-9215-A9803BFC728A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PseudoMvc</RootNamespace>
+    <AssemblyName>PseudoMvc</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FinSys.Framework.MasterApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=482618d5eb3e3417, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libraries\FinSys.Framework.MasterApp.dll</HintPath>
+    </Reference>
+    <Reference Include="FinSys.Framework.Presentation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=482618d5eb3e3417, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libraries\FinSys.Framework.Presentation.dll</HintPath>
+    </Reference>
+    <Reference Include="FinSys.Framework.VirtualPathProvider, Version=1.0.0.0, Culture=neutral, PublicKeyToken=482618d5eb3e3417, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libraries\FinSys.Framework.VirtualPathProvider.dll</HintPath>
+    </Reference>
+    <Reference Include="PseudoMvc.Json, Version=3.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libraries\PseudoMvc.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ActionResults\ActionResult.cs" />
+    <Compile Include="ActionResults\JsonResult.cs" />
+    <Compile Include="ActionResults\ViewResult.cs" />
+    <Compile Include="ActionResults\XmlResult.cs" />
+    <Compile Include="Controller.cs" />
+    <Compile Include="ControllerAttribute.cs" />
+    <Compile Include="DefaultModelBinder.cs" />
+    <Compile Include="ExtensionMethods.cs" />
+    <Compile Include="Factories\ControllerFactory.cs" />
+    <Compile Include="FrameworkPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FSGAuthorizeAttribute.cs" />
+    <Compile Include="HtmlHelper.cs" />
+    <Compile Include="AcceptVerbs.cs" />
+    <Compile Include="IController.cs" />
+    <Compile Include="IoC.cs" />
+    <Compile Include="IRoutablePage.cs" />
+    <Compile Include="IViewData.cs" />
+    <Compile Include="IViewPage.cs" />
+    <Compile Include="JsonResponseHandler.cs" />
+    <Compile Include="ModelState.cs" />
+    <Compile Include="ModelValidator.cs" />
+    <Compile Include="MultiSelectList.cs" />
+    <Compile Include="MvcHttpHandler.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RouteCollectionExtensions.cs" />
+    <Compile Include="SelectList.cs" />
+    <Compile Include="SelectListItem.cs" />
+    <Compile Include="ViewData.cs" />
+    <Compile Include="ViewPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormRouteHandler.cs" />
+    <Compile Include="XMLResponseHandler.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Libraries\FinSys.Common.Config.dll" />
+    <Content Include="Libraries\FinSys.Framework.BusinessEntities.dll" />
+    <Content Include="Libraries\FinSys.Framework.Common.dll" />
+    <Content Include="Libraries\FinSys.Framework.DAL.dll" />
+    <Content Include="Libraries\FinSys.Framework.Data.dll" />
+    <Content Include="Libraries\FinSys.Framework.DataAccess.dll" />
+    <Content Include="Libraries\FinSys.Framework.DataEncryption.dll" />
+    <Content Include="Libraries\FinSys.Framework.FastTrack.dll" />
+    <Content Include="Libraries\FinSys.Framework.LogWebEvent.dll" />
+    <Content Include="Libraries\FinSys.Framework.Mail.dll" />
+    <Content Include="Libraries\FinSys.Framework.MasterApp.dll" />
+    <Content Include="Libraries\FinSys.Framework.MasterModule.dll" />
+    <Content Include="Libraries\FinSys.Framework.Presentation.dll" />
+    <Content Include="Libraries\FinSys.Framework.Security.dll" />
+    <Content Include="Libraries\FinSys.Framework.UI.Web.dll" />
+    <Content Include="Libraries\FinSys.Framework.VirtualPathProvider.dll" />
+    <Content Include="Libraries\FinSys.Framework.WebSession.dll" />
+    <Content Include="Libraries\PseudoMvc.Json.dll" />
+    <Content Include="Libraries\PseudoMvc.Json.pdb" />
+    <Content Include="Libraries\PseudoMvc.Json.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,228 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7A46F397-1B35-400A-9FEF-2C720FD500E2}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PseudoMvc_WebAppSample</RootNamespace>
+    <AssemblyName>PseudoMvc_WebAppSample</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FinSys.Common.Config, Version=1.0.0.0, Culture=neutral, PublicKeyToken=482618d5eb3e3417, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\PseudoMvc\Libraries\FinSys.Common.Config.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FinSys.Framework.BusinessEntities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=482618d5eb3e3417, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\PseudoMvc\Libraries\FinSys.Framework.BusinessEntities.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FinSys.Framework.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=482618d5eb3e3417, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\PseudoMvc\Libraries\FinSys.Framework.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FinSys.Framework.DAL, Version=1.0.0.0, Culture=neutral, PublicKeyToken=482618d5eb3e3417, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\PseudoMvc\Libraries\FinSys.Framework.DAL.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FinSys.Framework.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=482618d5eb3e3417, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\PseudoMvc\Libraries\FinSys.Framework.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FinSys.Framework.DataAccess, Version=1.0.0.0, Culture=neutral, PublicKeyToken=482618d5eb3e3417, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\PseudoMvc\Libraries\FinSys.Framework.DataAccess.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FinSys.Framework.LogWebEvent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=482618d5eb3e3417, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\PseudoMvc\Libraries\FinSys.Framework.LogWebEvent.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FinSys.Framework.MasterApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=482618d5eb3e3417, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Documents\Visual Studio 2010\Projects\RevenueAccountingMaintenance\RevenueAccountingMaintenance\Lib\FinSys.Framework.MasterApp.dll</HintPath>
+    </Reference>
+    <Reference Include="FinSys.Framework.MasterModule">
+      <HintPath>..\PseudoMvc\Libraries\FinSys.Framework.MasterModule.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FinSys.Framework.Presentation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=482618d5eb3e3417, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\PseudoMvc\Libraries\FinSys.Framework.Presentation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FinSys.Framework.UI.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=482618d5eb3e3417, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\PseudoMvc\Libraries\FinSys.Framework.UI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FinSys.Framework.VirtualPathProvider, Version=1.0.0.0, Culture=neutral, PublicKeyToken=482618d5eb3e3417, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\PseudoMvc\Libraries\FinSys.Framework.VirtualPathProvider.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FinSys.Framework.WebSession, Version=1.0.0.0, Culture=neutral, PublicKeyToken=482618d5eb3e3417, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\PseudoMvc\Libraries\FinSys.Framework.WebSession.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.4.1.js" />
+    <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="Scripts\qunit.js" />
+    <Content Include="Views\Home\bar.aspx" />
+    <Content Include="Views\Home\Baz.aspx" />
+    <Content Include="Views\Home\foo.aspx" />
+    <Content Include="Views\Home\index.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HomeViewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\Home\bar.aspx.cs">
+      <DependentUpon>bar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Home\bar.aspx.designer.cs">
+      <DependentUpon>bar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Home\Baz.aspx.cs">
+      <DependentUpon>Baz.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Home\Baz.aspx.designer.cs">
+      <DependentUpon>Baz.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Home\foo.aspx.cs">
+      <DependentUpon>foo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Home\foo.aspx.designer.cs">
+      <DependentUpon>foo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Home\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Home\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Shared\Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Site.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PseudoMvc\PseudoMvc.csproj">
+      <Project>{E7518C7B-478E-40A8-9215-A9803BFC728A}</Project>
+      <Name>PseudoMvc</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Web.config">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Web.tt</DependentUpon>
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="Web.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Web.config</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>41643</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

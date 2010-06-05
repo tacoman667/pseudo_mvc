@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PseudoMvc", "PseudoMvc\PseudoMvc.csproj", "{E7518C7B-478E-40A8-9215-A9803BFC728A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PseudoMvc.Tests", "PseudoMvc.Tests\PseudoMvc.Tests.csproj", "{9B1F36B0-D9E6-40B1-A8D7-09214ED9F0B9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B997C576-CC52-4C3F-8921-03ACDC166126}"
+	ProjectSection(SolutionItems) = preProject
+		Local.testsettings = Local.testsettings
+		PseudoMvc.vsmdi = PseudoMvc.vsmdi
+		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PseudoMvc_WebAppSample", "PseudoMvc_WebAppSample\PseudoMvc_WebAppSample.csproj", "{7A46F397-1B35-400A-9FEF-2C720FD500E2}"
+EndProject
+Global
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
+	EndGlobalSection
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = PseudoMvc.vsmdi
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E7518C7B-478E-40A8-9215-A9803BFC728A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7518C7B-478E-40A8-9215-A9803BFC728A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7518C7B-478E-40A8-9215-A9803BFC728A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7518C7B-478E-40A8-9215-A9803BFC728A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B1F36B0-D9E6-40B1-A8D7-09214ED9F0B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B1F36B0-D9E6-40B1-A8D7-09214ED9F0B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B1F36B0-D9E6-40B1-A8D7-09214ED9F0B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B1F36B0-D9E6-40B1-A8D7-09214ED9F0B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A46F397-1B35-400A-9FEF-2C720FD500E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A46F397-1B35-400A-9FEF-2C720FD500E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A46F397-1B35-400A-9FEF-2C720FD500E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A46F397-1B35-400A-9FEF-2C720FD500E2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
