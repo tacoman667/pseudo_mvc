@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace PseudoMvc {
     public class IoC {
@@ -12,20 +11,37 @@ namespace PseudoMvc {
             RegisteredTypes = new Dictionary<Type, Func<object>>();
         }
 
+        public static void Register(Type T, Type TConcrete) {
+
+            if (RegisteredTypes.ContainsKey(T)) {
+                throw new DuplicateItemFoundException(String.Format("Cannot register type: {0} as one is already registered.", T.Name));
+            }
+
+            RegisteredTypes.Add(T, () => { return Activator.CreateInstance(TConcrete); });
+
+        }
+
+        /// <summary>
+        /// Registers a concrete type
+        /// Will reregister the concrete class to the generic type if already registered.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="action"></param>
+        public static void Register<TConcrete>() where TConcrete : class, new() {
+            
+            Register(typeof(TConcrete), typeof(TConcrete));
+            
+        }
+
         /// <summary>
         /// Registers a concrete type to 
         /// Will reregister the concrete class to the generic type if already registered.
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="action"></param>
-        public static void Register<T>(Func<object> action) {
+        public static void Register<T, TConcrete>() where TConcrete : class, new() {
 
-            if (RegisteredTypes.ContainsKey(typeof(T))) {
-                RegisteredTypes.Remove(typeof(T));
-                //throw new DuplicateItemFoundException(String.Format("Cannot register type: {0} as one is already registered.", typeof(T).Name));
-            }
-
-            RegisteredTypes.Add(typeof(T), action);
+            Register(typeof(T), typeof(TConcrete));
 
         }
 
@@ -37,6 +53,18 @@ namespace PseudoMvc {
 
             var function = RegisteredTypes[typeof(T)];
             return (T)function.Invoke();
+
+        }
+
+        public static object ResolveFromName(string name) {
+
+            var function = RegisteredTypes.Where(t => t.Key.Name.ToLower() == name.ToLower()).FirstOrDefault().Value;
+
+            if (function == null) {
+                throw new KeyNotFoundException(String.Format("Type: {0} is not registered and cannot be resolved.", name));
+            }
+
+            return function.Invoke();
 
         }
 

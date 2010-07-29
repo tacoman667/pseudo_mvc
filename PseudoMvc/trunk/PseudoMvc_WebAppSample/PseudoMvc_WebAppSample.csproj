@@ -36,68 +36,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="FinSys.Common.Config, Version=1.0.0.0, Culture=neutral, PublicKeyToken=482618d5eb3e3417, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\PseudoMvc\Libraries\FinSys.Common.Config.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="FinSys.Framework.BusinessEntities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=482618d5eb3e3417, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\PseudoMvc\Libraries\FinSys.Framework.BusinessEntities.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="FinSys.Framework.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=482618d5eb3e3417, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\PseudoMvc\Libraries\FinSys.Framework.Common.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="FinSys.Framework.DAL, Version=1.0.0.0, Culture=neutral, PublicKeyToken=482618d5eb3e3417, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\PseudoMvc\Libraries\FinSys.Framework.DAL.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="FinSys.Framework.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=482618d5eb3e3417, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\PseudoMvc\Libraries\FinSys.Framework.Data.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="FinSys.Framework.DataAccess, Version=1.0.0.0, Culture=neutral, PublicKeyToken=482618d5eb3e3417, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\PseudoMvc\Libraries\FinSys.Framework.DataAccess.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="FinSys.Framework.LogWebEvent, Version=1.0.0.0, Culture=neutral, PublicKeyToken=482618d5eb3e3417, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\PseudoMvc\Libraries\FinSys.Framework.LogWebEvent.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="FinSys.Framework.MasterApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=482618d5eb3e3417, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Documents\Visual Studio 2010\Projects\RevenueAccountingMaintenance\RevenueAccountingMaintenance\Lib\FinSys.Framework.MasterApp.dll</HintPath>
-    </Reference>
-    <Reference Include="FinSys.Framework.MasterModule">
-      <HintPath>..\PseudoMvc\Libraries\FinSys.Framework.MasterModule.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="FinSys.Framework.Presentation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=482618d5eb3e3417, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\PseudoMvc\Libraries\FinSys.Framework.Presentation.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="FinSys.Framework.UI.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=482618d5eb3e3417, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\PseudoMvc\Libraries\FinSys.Framework.UI.Web.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="FinSys.Framework.VirtualPathProvider, Version=1.0.0.0, Culture=neutral, PublicKeyToken=482618d5eb3e3417, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\PseudoMvc\Libraries\FinSys.Framework.VirtualPathProvider.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="FinSys.Framework.WebSession, Version=1.0.0.0, Culture=neutral, PublicKeyToken=482618d5eb3e3417, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\PseudoMvc\Libraries\FinSys.Framework.WebSession.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Finsys.Web.Mvc">
+      <HintPath>..\PseudoMvc\bin\Release\Finsys.Web.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -175,12 +115,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Shared\Site.Master" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\PseudoMvc\PseudoMvc.csproj">
-      <Project>{E7518C7B-478E-40A8-9215-A9803BFC728A}</Project>
-      <Name>PseudoMvc</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

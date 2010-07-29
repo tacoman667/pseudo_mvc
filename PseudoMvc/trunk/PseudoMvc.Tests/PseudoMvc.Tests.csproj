@@ -37,11 +37,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="FinSys.Framework.MasterApp">
-      <HintPath>..\PseudoMvc\Libraries\FinSys.Framework.MasterApp.dll</HintPath>
-    </Reference>
-    <Reference Include="FinSys.Framework.Presentation">
-      <HintPath>..\PseudoMvc\Libraries\FinSys.Framework.Presentation.dll</HintPath>
+    <Reference Include="Finsys.Web.Mvc">
+      <HintPath>..\PseudoMvc\bin\Release\Finsys.Web.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
@@ -62,12 +59,12 @@
     <Compile Include="Controllers\ControllerIntegrationTests.cs" />
     <Compile Include="Controllers\ControllerUnitTests.cs" />
     <Compile Include="DefaultModelBinderTests.cs" />
-    <Compile Include="Factories\ControllerFactoryTests.cs" />
     <Compile Include="Fakes\FakePage.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Fakes\FakeHomeController.cs" />
     <Compile Include="Fakes\FakeHomeViewModel.cs" />
+    <Compile Include="IoC_Tests.cs" />
     <Compile Include="KeyValuePair.cs" />
     <Compile Include="ModelValidatorTests.cs" />
     <Compile Include="ObjectExtensionMethodsTests.cs" />
@@ -75,16 +72,6 @@
     <Compile Include="ViewPageTests.cs" />
     <Compile Include="WebFormRouteHandlerTests.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\PseudoMvc\PseudoMvc.csproj">
-      <Project>{E7518C7B-478E-40A8-9215-A9803BFC728A}</Project>
-      <Name>PseudoMvc</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Shadow Include="Test References\PseudoMvc.accessor" />
-  </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

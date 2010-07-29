@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Web.Routing;
-using PseudoMvc.Factories;
 using PseudoMvc.Tests.Fakes;
 using System.Reflection;
 
@@ -28,7 +27,7 @@ namespace PseudoMvc.Tests.Controllers {
 
         private IController CreateFakeHomeController() {
             context.RouteData.Values["controller"] = "fakehome";
-            var controller = ControllerFactory.Current.CreateController(Assembly.GetCallingAssembly(), "fakehome");
+            var controller = new FakeHomeController();
             return controller;
         }
 

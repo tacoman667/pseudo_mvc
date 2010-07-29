@@ -40,7 +40,7 @@ namespace PseudoMvc {
             routes.Add(name,
                        new Route(url,
                                  new RouteValueDictionary() { { "controller", controllerName }, { "action", actionName }, { "id", id } },
-                                 new WebFormRouteHandler() { ApplicationAssembly = System.Reflection.Assembly.GetCallingAssembly() })
+                                 new WebFormRouteHandler())
                       );
             
         }

@@ -6,15 +6,15 @@ using System.Text;
 namespace PseudoMvc.Tests.Fakes {
     class FakeHomeController : Controller {
 
-        public ActionResult Index() {
+        public ViewResult Index() {
             return View();
         }
 
-        public ActionResult Foo(FakeHomeViewModel bar) {
+        public ViewResult Foo(FakeHomeViewModel bar) {
             return View(bar);
         }
 
-        public ActionResult Bar(string HelloMvc, int Id) {
+        public ViewResult Bar(string HelloMvc, int Id) {
             var model = new FooBar() { HelloMvc = HelloMvc, Id = Id };
             return View(model);
         }

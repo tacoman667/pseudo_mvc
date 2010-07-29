@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
-using System.Web.Security;
-using System.Web.SessionState;
 using System.Web.Routing;
 using PseudoMvc;
-using PseudoMvc_WebAppSample.Controllers;
 
 namespace PseudoMvc_WebAppSample {
     public class Global : System.Web.HttpApplication {
@@ -14,6 +9,13 @@ namespace PseudoMvc_WebAppSample {
         protected void Application_Start(object sender, EventArgs e) {
 
             RegisterRoutes(RouteTable.Routes);
+            RegisterTypes();
+
+        }
+
+        private void RegisterTypes() {
+
+            RegisterControllers();
 
         }
 
@@ -27,28 +29,12 @@ namespace PseudoMvc_WebAppSample {
 
         }
 
-        protected void Session_Start(object sender, EventArgs e) {
-
+        private void RegisterControllers() {
+            var types = System.Reflection.Assembly.GetExecutingAssembly().GetTypes().Where(t => t.BaseType == typeof(Controller)).ToList();
+            foreach (var type in types) {
+                IoC.Register(type, type);
+            }
         }
 
-        protected void Application_BeginRequest(object sender, EventArgs e) {
-
-        }
-
-        protected void Application_AuthenticateRequest(object sender, EventArgs e) {
-
-        }
-
-        protected void Application_Error(object sender, EventArgs e) {
-
-        }
-
-        protected void Session_End(object sender, EventArgs e) {
-
-        }
-
-        protected void Application_End(object sender, EventArgs e) {
-
-        }
     }
 }

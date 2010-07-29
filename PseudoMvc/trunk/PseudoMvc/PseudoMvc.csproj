@@ -35,18 +35,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="FinSys.Framework.MasterApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=482618d5eb3e3417, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>Libraries\FinSys.Framework.MasterApp.dll</HintPath>
-    </Reference>
-    <Reference Include="FinSys.Framework.Presentation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=482618d5eb3e3417, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>Libraries\FinSys.Framework.Presentation.dll</HintPath>
-    </Reference>
-    <Reference Include="FinSys.Framework.VirtualPathProvider, Version=1.0.0.0, Culture=neutral, PublicKeyToken=482618d5eb3e3417, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>Libraries\FinSys.Framework.VirtualPathProvider.dll</HintPath>
-    </Reference>
+    <Reference Include="Finsys.Framework, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
     <Reference Include="PseudoMvc.Json, Version=3.5.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Libraries\PseudoMvc.Json.dll</HintPath>
@@ -71,8 +60,8 @@
     <Compile Include="Controller.cs" />
     <Compile Include="ControllerAttribute.cs" />
     <Compile Include="DefaultModelBinder.cs" />
+    <Compile Include="DuplicateItemFoundException.cs" />
     <Compile Include="ExtensionMethods.cs" />
-    <Compile Include="Factories\ControllerFactory.cs" />
     <Compile Include="FrameworkPage.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
@@ -101,28 +90,16 @@
     <Compile Include="XMLResponseHandler.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Libraries\FinSys.Common.Config.dll" />
-    <Content Include="Libraries\FinSys.Framework.BusinessEntities.dll" />
-    <Content Include="Libraries\FinSys.Framework.Common.dll" />
-    <Content Include="Libraries\FinSys.Framework.DAL.dll" />
-    <Content Include="Libraries\FinSys.Framework.Data.dll" />
-    <Content Include="Libraries\FinSys.Framework.DataAccess.dll" />
-    <Content Include="Libraries\FinSys.Framework.DataEncryption.dll" />
-    <Content Include="Libraries\FinSys.Framework.FastTrack.dll" />
-    <Content Include="Libraries\FinSys.Framework.LogWebEvent.dll" />
-    <Content Include="Libraries\FinSys.Framework.Mail.dll" />
-    <Content Include="Libraries\FinSys.Framework.MasterApp.dll" />
-    <Content Include="Libraries\FinSys.Framework.MasterModule.dll" />
-    <Content Include="Libraries\FinSys.Framework.Presentation.dll" />
-    <Content Include="Libraries\FinSys.Framework.Security.dll" />
-    <Content Include="Libraries\FinSys.Framework.UI.Web.dll" />
-    <Content Include="Libraries\FinSys.Framework.VirtualPathProvider.dll" />
-    <Content Include="Libraries\FinSys.Framework.WebSession.dll" />
-    <Content Include="Libraries\PseudoMvc.Json.dll" />
-    <Content Include="Libraries\PseudoMvc.Json.pdb" />
-    <Content Include="Libraries\PseudoMvc.Json.xml" />
+    <Content Include="Libraries\Finsys.Framework.dll" />
+    <Content Include="Libraries\Finsys.Framework.pdb" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>ilmerge /wildcards /allowdup /copyattrs /target:library /out:"$(TargetDir)Finsys.Web.Mvc.dll" finsys.*.dll pseudomvc.dll pseudomvc.json.dll</PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PreBuildEvent>del "$(TargetDir)Finsys.Web.Mvc.*"</PreBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

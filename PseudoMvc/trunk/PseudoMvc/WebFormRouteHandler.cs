@@ -1,16 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Web.Security;
-using System.Security;
-using System.Web.Compilation;
-using System.Web;
-using System.Web.UI;
-using System.Web.Routing;
-using System.Reflection;
 using System.Globalization;
-using PseudoMvc.Factories;
+using System.Linq;
+using System.Reflection;
+using System.Web;
+using System.Web.Routing;
 
 
 
@@ -19,11 +13,7 @@ namespace PseudoMvc {
 
         public WebFormRouteHandler() { }
 
-        public Assembly ApplicationAssembly { get; set; }
-
         public IHttpHandler GetHttpHandler(RequestContext requestContext) {
-
-            requestContext.RouteData.DataTokens.Add("appAssembly", ApplicationAssembly);
 
             foreach (var param in requestContext.RouteData.Values) {
                 requestContext.HttpContext.Items[param.Key] = param.Value;
@@ -105,7 +95,10 @@ namespace PseudoMvc {
 
         private static MethodInfo GetControllerMethodToCallFromRequestType(RequestContext requestContext, IController controller, string actionName) {
             
-            var methods = controller.GetAllMethods().Where(m => m.Name.ToLower() == actionName.ToLower() && m.IsPublic && m.ReturnType.BaseType == typeof(ActionResult));
+            var methods = controller.GetAllMethods().Where(m => 
+                                                           m.Name.ToLower() == actionName.ToLower() && 
+                                                           m.IsPublic && 
+                                                           m.ReturnType.BaseType == typeof(ActionResult));
             
 
             foreach (var method in methods) {
@@ -181,7 +174,9 @@ namespace PseudoMvc {
         }
 
         private static IController GetControllerFromRouteValues(RequestContext requestContext) {
-            return ControllerFactory.Current.CreateController(requestContext.RouteData.DataTokens["appAssembly"] as Assembly, requestContext.RouteData.Values["controller"] as string);
+
+            var name = requestContext.RouteData.Values["controller"].ToString() + "controller";
+            return IoC.ResolveFromName(name) as IController;
         }
 
         private static string ToProperCase(string text) {
